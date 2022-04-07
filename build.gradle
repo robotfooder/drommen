@@ -10,6 +10,22 @@ group = "com.cgi.maintenix"
 repositories {
     mavenCentral()
 }
+configurations {
+    cucumberRuntime {
+        extendsFrom testImplementation
+    }
+}
+
+task cucumber() {
+    dependsOn assemble, testClasses
+    doLast {
+        javaexec {
+            main = "io.cucumber.core.cli.Main"
+            classpath = configurations.cucumberRuntime + sourceSets.main.output + sourceSets.test.output
+            args = ['--plugin', 'pretty', '--glue', 'com.cgi.maintenix', 'src/test/resources']
+        }
+    }
+}
 
 dependencies {
     annotationProcessor("org.projectlombok:lombok")
@@ -21,6 +37,10 @@ dependencies {
     runtimeOnly("ch.qos.logback:logback-classic")
     implementation("io.micronaut:micronaut-validation")
 
+    testImplementation 'io.cucumber:cucumber-java8:7.2.3'
+
+
+    testImplementation 'io.cucumber:cucumber-junit:7.2.3'
 }
 
 
