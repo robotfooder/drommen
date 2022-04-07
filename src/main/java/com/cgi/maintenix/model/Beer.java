@@ -14,7 +14,8 @@ public class Beer {
     private float alcohol;
     private float ypk;
     private int quantity;
-    private int sizeCL;
+    @Builder.Default
+    private int sizeCL = 33;
 
     public static BeerBuilder builder() {
         return new CustomBeerBuilder();

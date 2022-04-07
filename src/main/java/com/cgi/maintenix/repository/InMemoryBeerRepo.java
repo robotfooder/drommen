@@ -12,7 +12,7 @@ import static com.cgi.maintenix.model.BeerType.*;
 @Singleton
 public class InMemoryBeerRepo implements BeerRepo {
 
-    private List<Beer> beersInStore = new ArrayList<>();
+    private final List<Beer> beersInStore = new ArrayList<>();
 
     public InMemoryBeerRepo() {
         beersInStore.add(Beer.builder()
@@ -21,7 +21,6 @@ public class InMemoryBeerRepo implements BeerRepo {
                 .type(PILSNER)
                 .alcohol(4.8F)
                 .grossPrice(20.30F)
-                .sizeCL(33)
                 .quantity(3)
                 .build());
         beersInStore.add(Beer.builder()
@@ -29,7 +28,6 @@ public class InMemoryBeerRepo implements BeerRepo {
                 .name("No. 2")
                 .type(IPA)
                 .alcohol(6.5F)
-                .sizeCL(33)
                 .grossPrice(29.80F)
                 .quantity(2)
                 .build());
@@ -40,7 +38,6 @@ public class InMemoryBeerRepo implements BeerRepo {
                 .alcohol(5.0F)
                 .grossPrice(21.50F)
                 .quantity(6)
-                .sizeCL(33)
                 .build());
         beersInStore.add(Beer.builder()
                 .brand(JAMTLAND)
@@ -48,7 +45,6 @@ public class InMemoryBeerRepo implements BeerRepo {
                 .type(IPA)
                 .alcohol(5.4F)
                 .grossPrice(26.50F)
-                .sizeCL(33)
                 .quantity(1)
                 .build());
         beersInStore.add(Beer.builder()
@@ -57,7 +53,6 @@ public class InMemoryBeerRepo implements BeerRepo {
                 .type(LAGER)
                 .alcohol(5.0F)
                 .grossPrice(11.90F)
-                .sizeCL(33)
                 .quantity(300)
                 .build());
         beersInStore.add(Beer.builder()
@@ -93,7 +88,6 @@ public class InMemoryBeerRepo implements BeerRepo {
                 .type(LAGER)
                 .alcohol(0.0F)
                 .grossPrice(12.90F)
-                .sizeCL(33)
                 .quantity(23)
                 .build());
         beersInStore.add(Beer.builder()
@@ -102,7 +96,6 @@ public class InMemoryBeerRepo implements BeerRepo {
                 .type(LAGER)
                 .alcohol(5.6F)
                 .grossPrice(10.90F)
-                .sizeCL(33)
                 .quantity(99)
                 .build());
         beersInStore.add(Beer.builder()
@@ -111,7 +104,6 @@ public class InMemoryBeerRepo implements BeerRepo {
                 .type(LAGER)
                 .alcohol(5.0F)
                 .grossPrice(14.30F)
-                .sizeCL(33)
                 .quantity(5)
                 .build());
         beersInStore.add(Beer.builder()
@@ -120,7 +112,6 @@ public class InMemoryBeerRepo implements BeerRepo {
                 .type(ALE)
                 .alcohol(6.7F)
                 .grossPrice(19.90F)
-                .sizeCL(33)
                 .quantity(12)
                 .build());
         beersInStore.add(Beer.builder()

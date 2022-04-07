@@ -11,6 +11,7 @@ import java.util.stream.Collectors;
 @Singleton
 public class DrommenBarService implements Bar {
 
+    private static final float MARGIN_MULTIPLIER = 4.5F;
     private final BeerRepo repo;
 
     public DrommenBarService(BeerRepo repo) {
@@ -27,7 +28,7 @@ public class DrommenBarService implements Bar {
     }
 
     private Beer setCustomerPrice(Beer beer) {
-        beer.setCustomerPrice(beer.getGrossPrice() * 5);
+        beer.setCustomerPrice(beer.getGrossPrice() * MARGIN_MULTIPLIER);
         return beer;
     }
 }
